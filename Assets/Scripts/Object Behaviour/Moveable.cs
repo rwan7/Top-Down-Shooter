@@ -37,6 +37,12 @@ public class Moveable : MonoBehaviour
         direction.y = v;
     }
 
+    internal void setDirection(float x, float y)
+    {
+        direction.x = x;
+        direction.y = y;
+    }
+
     private void setDirection(Vector3 value)
     {
         direction = value;
