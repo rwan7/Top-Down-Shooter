@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float fireRate;
+    private float timer = 0;
+    public PoolObjectType type;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        timer = timer - Time.deltaTime > 0 ? timer - Time.deltaTime : 0f;
+    }
+
+    public void Shoot()
+    {
+        if (timer == 0f)
+        {
+            ObjectPool.GetInstance().RequestObject(type).activate(transform.position, transform.rotation);
+            timer = fireRate;
+        }
     }
 }

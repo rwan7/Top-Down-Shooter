@@ -24,7 +24,12 @@ public class Moveable : MonoBehaviour
 
     public Vector3 getNextPosition()
     {
-        return transform.position + (direction * Time.deltaTime * speed);
+        return transform.position + newPosition();
+    }
+
+    public Vector3 newPosition()
+    {
+        return direction * Time.deltaTime * speed;
     }
 
     internal void setXDirection(float v)
