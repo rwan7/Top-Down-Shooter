@@ -14,9 +14,13 @@ GameObject:
   - component: {fileID: 971849882337498158}
   - component: {fileID: 2845134728721351892}
   - component: {fileID: 4874763742082336181}
+  - component: {fileID: -790899405077592906}
+  - component: {fileID: -3773612399797034471}
+  - component: {fileID: 6576270672332829962}
+  - component: {fileID: 5267462738693981222}
   m_Layer: 0
   m_Name: EnemySmall
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +151,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f2e2194fda27d49a14e5f7affbcc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-790899405077592906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263570520305530814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9159bfc2e82eaea4f94a7b6b68604857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
+  OnTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5267462738693981222}
+        m_TargetAssemblyTypeName: Life, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!50 &-3773612399797034471
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263570520305530814}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &6576270672332829962
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263570520305530814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &5267462738693981222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263570520305530814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b20e546b77c5a459bf14ee2a8a808c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  lifeScriptable: {fileID: 0}
+  maxLife: 0
+  maxLifeScriptable: {fileID: 0}
+  useScriptable: 0
+  OnLifeReachZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7374403664552528030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,6 +269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2726952187110499778}
     m_Modifications:
+    - target: {fileID: 1823733869105928887, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
+      propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3693844397222750429, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
       propertyPath: m_Color.b
       value: 0
