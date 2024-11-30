@@ -9,6 +9,7 @@ public class TriggerEvent : MonoBehaviour
     public string targetTag;
 
     public UnityEvent OnTrigger;
+    public UnityEvent<GameObject> OnTriggerWithGameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class TriggerEvent : MonoBehaviour
         if (collision.tag == targetTag)
         {
             OnTrigger?.Invoke();
+            OnTriggerWithGameObject?.Invoke(collision.gameObject);
         }
     }
 }

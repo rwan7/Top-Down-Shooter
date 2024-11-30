@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 8269727273126435098}
   - component: {fileID: 1541521288148403474}
   - component: {fileID: 145198501680666646}
+  - component: {fileID: 7089150499887628220}
+  - component: {fileID: 5601771327700612126}
+  - component: {fileID: 3066818733001616632}
   - component: {fileID: -2264629235458889082}
   - component: {fileID: -6647878214976518179}
-  - component: {fileID: 7089150499887628220}
   m_Layer: 0
   m_Name: EnemyMedium
   m_TagString: Enemy
@@ -180,6 +182,74 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7089150499887628220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450448770611352171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b20e546b77c5a459bf14ee2a8a808c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
+  lifeScriptable: {fileID: 0}
+  maxLife: 3
+  maxLifeScriptable: {fileID: 0}
+  useScriptable: 0
+  OnLifeReachZero:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5601771327700612126}
+        m_TargetAssemblyTypeName: Destroyable, Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3066818733001616632}
+        m_TargetAssemblyTypeName: ExplosionEffect, Assembly-CSharp
+        m_MethodName: ShowExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5601771327700612126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450448770611352171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68245b68dd91b8040af6583017f5e2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3066818733001616632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450448770611352171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf536cd584792e408c4676dde7e8dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-2264629235458889082
 Rigidbody2D:
   serializedVersion: 4
@@ -242,26 +312,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.53}
   serializedVersion: 2
   m_Radius: 1.0893298
---- !u!114 &7089150499887628220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450448770611352171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b20e546b77c5a459bf14ee2a8a808c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
-  lifeScriptable: {fileID: 0}
-  maxLife: 3
-  maxLifeScriptable: {fileID: 0}
-  useScriptable: 0
-  OnLifeReachZero:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &4375644024091242980
 PrefabInstance:
   m_ObjectHideFlags: 0
