@@ -16,10 +16,10 @@ public class FireRateModifier : MonoBehaviour
 
     void Start()
     {
-        foreach (Weapon w in weapons)
-        {
-            w.AddFireRateModifier(modifier);
-        }
+        // foreach (Weapon w in weapons)
+        // {
+            // w.AddFireRateModifier(modifier);
+        // }
     }
 
     private void OnDestroy()
@@ -33,5 +33,6 @@ public class FireRateModifier : MonoBehaviour
     public void AddComponentToObject(GameObject go)
     {
         go.AddComponent<FireRateModifier>();
+		go.GetComponent<WeaponSetController>().WeaponUpgradeCheck();
     }
 }

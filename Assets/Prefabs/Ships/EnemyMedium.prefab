@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 3066818733001616632}
   - component: {fileID: -2264629235458889082}
   - component: {fileID: -6647878214976518179}
+  - component: {fileID: 2707072717023240905}
+  - component: {fileID: -3230093509474787105}
   m_Layer: 0
   m_Name: EnemyMedium
   m_TagString: Enemy
@@ -182,6 +184,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTriggerWithGameObject:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7089150499887628220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +222,30 @@ MonoBehaviour:
       - m_Target: {fileID: 3066818733001616632}
         m_TargetAssemblyTypeName: ExplosionEffect, Assembly-CSharp
         m_MethodName: ShowExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2707072717023240905}
+        m_TargetAssemblyTypeName: ContainItems, Assembly-CSharp
+        m_MethodName: SpawnItemOnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -3230093509474787105}
+        m_TargetAssemblyTypeName: ContainItems, Assembly-CSharp
+        m_MethodName: SpawnItemOnDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -312,6 +341,40 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.53}
   serializedVersion: 2
   m_Radius: 1.0893298
+--- !u!114 &2707072717023240905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450448770611352171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0296cf2d6bcc7eb46ad4aaea4d8b422f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - rate: 60
+    prefab: {fileID: 6676063211730358359, guid: 303b582ef81faf344887ad8fb17270f2, type: 3}
+  - rate: 40
+    prefab: {fileID: 0}
+--- !u!114 &-3230093509474787105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450448770611352171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0296cf2d6bcc7eb46ad4aaea4d8b422f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - rate: 15
+    prefab: {fileID: 7701486665084335571, guid: 67c871ce72bf0384c8e43252d7474a1c, type: 3}
+  - rate: 85
+    prefab: {fileID: 7701486665084335571, guid: 67c871ce72bf0384c8e43252d7474a1c, type: 3}
 --- !u!1001 &4375644024091242980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,6 +383,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7297946707456721775}
     m_Modifications:
+    - target: {fileID: 1823733869105928887, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3693844397222750429, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
       propertyPath: m_SortingOrder
       value: 6
@@ -407,6 +474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7297946707456721775}
     m_Modifications:
+    - target: {fileID: 1823733869105928887, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3693844397222750429, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
       propertyPath: m_SortingOrder
       value: 6

@@ -48,4 +48,9 @@ public class Weapon : MonoBehaviour
         }
         return mod;
     }
+	
+	internal void ClearModifier()
+	{
+		fireRateModifiers.Clear();
+	}
 }

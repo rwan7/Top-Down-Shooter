@@ -56,4 +56,12 @@ public class ObjectPool : MonoBehaviour
     {
         return instance;
     }
+	
+	public void DeactivateAllObjects()
+	{
+		foreach (PoolObject po in poolObjects)
+		{
+			po.deactivate();
+		}
+	}
 }

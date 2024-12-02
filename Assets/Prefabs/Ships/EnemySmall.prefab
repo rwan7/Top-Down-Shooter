@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3350414742708130878}
   - component: {fileID: -3773612399797034471}
   - component: {fileID: 6576270672332829962}
+  - component: {fileID: 4477948887666869003}
   m_Layer: 0
   m_Name: EnemySmall
   m_TagString: Enemy
@@ -181,6 +182,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTriggerWithGameObject:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5267462738693981222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +220,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1100935839128756851}
         m_TargetAssemblyTypeName: ExplosionEffect, Assembly-CSharp
         m_MethodName: ShowExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4477948887666869003}
+        m_TargetAssemblyTypeName: ContainItems, Assembly-CSharp
+        m_MethodName: SpawnItemOnDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -311,6 +327,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4477948887666869003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263570520305530814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0296cf2d6bcc7eb46ad4aaea4d8b422f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - rate: 15
+    prefab: {fileID: 6676063211730358359, guid: 303b582ef81faf344887ad8fb17270f2, type: 3}
+  - rate: 85
+    prefab: {fileID: 6676063211730358359, guid: 303b582ef81faf344887ad8fb17270f2, type: 3}
 --- !u!1001 &7374403664552528030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,7 +354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1823733869105928887, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
       propertyPath: fireRate
-      value: 1.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3693844397222750429, guid: 5298770cb8a7e0f40afbf6983539b38f, type: 3}
       propertyPath: m_Color.b

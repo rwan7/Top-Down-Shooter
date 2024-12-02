@@ -47,5 +47,18 @@ public class WeaponSetController : MonoBehaviour
         }
         
         ActivateWeaponSet(upgradeLevel);
+		FireRateUpdate();
     }
+	
+	private void FireRateUpdate()
+	{
+		foreach (Weapon w in GetComponentsInChildren<Weapon>())
+		{
+			w.ClearModifier();
+			foreach (FireRateModifier f in GetComponents<FireRateModifier>())
+			{
+				w.AddFireRateModifier(f.modifier);
+			}
+		}
+	}
 }

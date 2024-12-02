@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 8391407315090534776}
   - component: {fileID: 8015844544772980555}
   - component: {fileID: 6029197064490041889}
+  - component: {fileID: 97438744287901120}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -406,6 +407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 97438744287901120}
+        m_TargetAssemblyTypeName: GameOverController, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5833344466454891894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +475,18 @@ MonoBehaviour:
   - {fileID: 6999921674596140566}
   - {fileID: 4865271653599099530}
   - {fileID: 5095665526162845139}
+--- !u!114 &97438744287901120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286680262976528513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9846113946e3a104d953da8c690c309b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4865271653599099530
 GameObject:
   m_ObjectHideFlags: 0

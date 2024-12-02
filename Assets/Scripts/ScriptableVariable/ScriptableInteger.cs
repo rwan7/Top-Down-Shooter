@@ -13,7 +13,12 @@ public class ScriptableInteger : ScriptableObject
     {
         if (resetOnEnable)
         {
-            value = defaultValue;
+            reset();
         }
     }
+	
+	internal void reset()
+	{
+		value = defaultValue;
+	}
 }
